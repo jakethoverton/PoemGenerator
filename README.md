@@ -1,18 +1,22 @@
 # PoemGenerator
-This exercise is to create a random poem generator using the following grammatical rules:
+This exercise is to create a random poem generator using the following grammatical rules:  
+
 POEM: &lt;LINE&gt; &lt;LINE&gt; &lt;LINE&gt; &lt;LINE&gt; &lt;LINE&gt;
+
 LINE: &lt;NOUN&gt;|&lt;PREPOSITION&gt;|&lt;PRONOUN&gt; $LINEBREAK
+
 ADJECTIVE: black|white|dark|light|bright|murky|muddy|clear &lt;NOUN&gt;|&lt;ADJECTIVE&gt;|$END
-NOUN:
-heart|sun|moon|thunder|fire|time|wind|sea|river|flavor|wave|willow|rain|tree|flowe
+
+NOUN: heart|sun|moon|thunder|fire|time|wind|sea|river|flavor|wave|willow|rain|tree|flowe
 r|field|meadow|pasture|harvest|water|father|mother|brother|sister
 &lt;VERB&gt;|&lt;PREPOSITION&gt;|$END
+
 PRONOUN: my|your|his|her &lt;NOUN&gt;|&lt;ADJECTIVE&gt;
-VERB:
-runs|walks|stands|climbs|crawls|flows|flies|transcends|ascends|descends|sinks
+
+VERB: runs|walks|stands|climbs|crawls|flows|flies|transcends|ascends|descends|sinks
 &lt;PREPOSITION&gt;|&lt;PRONOUN&gt;|$END
-PREPOSITION:
-above|across|against|along|among|around|before|behind|beneath|beside|between|beyon
+
+PREPOSITION: above|across|against|along|among|around|before|behind|beneath|beside|between|beyon
 d|during|inside|onto|outside|under|underneath|upon|with|without|through
 &lt;NOUN&gt;|&lt;PRONOUN&gt;|&lt;ADJECTIVE&gt;
 
