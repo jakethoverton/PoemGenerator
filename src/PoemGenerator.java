@@ -57,18 +57,32 @@ public class PoemGenerator{
 	* @param col integer containing what column of the array to access
 	*/
 	public static void drillDown(String parse[][], int row, int col){
-		if(parse[row][0] == null){
-			System.exit(0);
-		}else if(parse[row][col] == null){
-			drillDown(parse, row + 1, 0);
-		}
-		if(parse[row][col].contains("|")){
-			System.out.println(handleRandom(parse[row][col]) + " ");
+		String token = parse[row][col];
+		if(token == null){
+			return;
+		} 
+		if(token.contains("|")){
+			String selection = handleRandom(token);
+			if(selection.contains("<")||selection.contains(">")){
+				handleAngleBracket(parse, selection);
+			} else if(selection.equals("$END")){
+				return;
+			} else if (selection.equals("$LINEBREAK")){
+				System.out.print("\n");
+			} else {
+				System.out.print(selection + " ");
+			}
 			drillDown(parse, row, col + 1);
-		} else {
-			System.out.println(parse[row][col] + " ");
-			drillDown(parse, row, col + 1);		
+			return;
+		} else if(token.contains("<")||token.contains(">")){
+			handleAngleBracket(parse, token);
+		} else if(token.equals("$END")){
+			return;
+		} else if (token.equals("$LINEBREAK")){
+			System.out.print("\n");
 		}
+		drillDown(parse, row, col + 1);
+		return;
 	}
 	/**
 	* Chooses a random value from the pipe delimited string
@@ -86,4 +100,19 @@ public class PoemGenerator{
 		scn.close();
 		return selection;		
 	}
+	/**
+	* Recursively handles angle brackets until a word is found
+	* @param token The String surrounded by angle brackets
+	*/
+	public static void handleAngleBracket(String parse[][], String token){
+		token = token.substring(1, token.length() -1);
+		token = token + ":";
+		for(int i = 0; i < parse.length; i++){
+			if(parse[i][0].equals(token)){
+				drillDown(parse, i, 0);
+				break;
+			}
+		}
+	}
+	
 }
