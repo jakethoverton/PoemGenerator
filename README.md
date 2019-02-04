@@ -26,7 +26,9 @@ heart.
 
 The source code for the program is in the file src/PoemGenerator.java 
 
-In order to run the program use the command "java bin/PoemGenerator <filename>.txt". 
+The compiled code is in the file bin/PoemGenerator.class
+
+In order to run the program from the bin folder use the command "java PoemGenerator <Path to Filename.txt>". 
   
-To run the test file provided in the requirements use the command "java bin/PoemGenerator testFiles/GrammarRules.txt".
+To run the test file provided in the requirements use the command "java PoemGenerator ../testFiles/GrammarRules.txt".
 
