@@ -28,7 +28,7 @@ The source code for the program is in the file src/PoemGenerator.java
 
 The compiled code is in the file bin/PoemGenerator.class
 
-In order to run the program from the bin folder use the command "java PoemGenerator <Path to Filename.txt>". 
+In order to run the program from the bin folder use the command "java PoemGenerator <Path to Filename>.txt". 
   
 To run the test file provided in the requirements use the command "java PoemGenerator ../testFiles/GrammarRules.txt".
 
